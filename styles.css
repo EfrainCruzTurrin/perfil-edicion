@@ -475,6 +475,33 @@ a:hover { color: var(--tinta); }
 .vista-sonido span:nth-child(3n) { animation-delay: -.3s; background: var(--tinta); }
 @keyframes onda { from { transform: scaleY(1); } to { transform: scaleY(.45); } }
 
+/* 08 · crudos: un clip en bruto con su línea de tiempo y el cabezal que avanza */
+.vista-crudos { background: var(--neutro); }
+.vista-crudos__video {
+  position: absolute; left: 12%; right: 12%; top: 12%; height: 50%;
+  background: var(--noche);
+  border: var(--borde) solid var(--tinta); border-radius: var(--radio);
+  display: grid; place-items: center;
+}
+.vista-crudos__play {
+  width: 0; height: 0;
+  border-left: 16px solid var(--azul-claro);
+  border-top: 10px solid transparent; border-bottom: 10px solid transparent;
+  margin-left: 4px;
+}
+.vista-crudos__pista { position: absolute; left: 12%; right: 12%; bottom: 12%; height: 18%; display: flex; gap: 4px; }
+.vista-crudos__pista span {
+  flex: 1; background: var(--papel);
+  border: 2px solid var(--tinta); border-radius: 2px;
+}
+.vista-crudos__pista span:nth-child(1) { flex: 1.4; background: var(--azul-claro); }
+.vista-crudos__pista span:nth-child(3) { flex: .8; background: var(--acento); }
+.vista-crudos__cabezal {
+  position: absolute; top: 66%; bottom: 8%; left: 12%; width: 3px; background: var(--tinta);
+  animation: cabezal 4s linear infinite;
+}
+@keyframes cabezal { from { left: 12%; } to { left: 86%; } }
+
 .licencia { margin-top: 28px; max-width: 620px; font-size: 15px; text-wrap: pretty; }
 
 /* ---------- 5. Comunidad (fondo noche) ---------- */
