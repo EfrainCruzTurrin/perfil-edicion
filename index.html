@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ===== METADATOS ===== -->
+  <title>Perfil Edición · Recursos y consejos para editores de video</title>
+  <meta name="description" content="Consejos de edición y recursos gratis para editores de video: fondos, overlays, sonidos y más. Pronto, una comunidad con herramientas que eliminan pasos manuales.">
+  <meta name="theme-color" content="#F8F7F3">
+
+  <!-- =========================================================
+       DOMINIO DEL SITIO — CAMBIA AQUÍ CUANDO LO TENGAS
+       Reemplaza "https://perfil-edicion.vercel.app" en las 3 líneas
+       de abajo (canonical, og:url y og:image) por tu dominio final.
+       Va escrito en el HTML (no en main.js) porque WhatsApp,
+       Instagram y Google leen estas etiquetas sin ejecutar JavaScript.
+       ========================================================= -->
+  <link rel="canonical" href="https://perfil-edicion.vercel.app/">
+  <meta property="og:url" content="https://perfil-edicion.vercel.app/">
+  <meta property="og:image" content="https://perfil-edicion.vercel.app/og-image.png">
+
+  <!-- Open Graph: lo que se ve al compartir el enlace -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:site_name" content="Perfil Edición">
+  <meta property="og:title" content="Perfil Edición · Menos pasos, mejores cortes.">
+  <meta property="og:description" content="Consejos de edición y recursos gratis para editores de video.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo de Perfil Edición y el lema Menos pasos, mejores cortes.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon: el símbolo en su versión avatar -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- ===== FUENTES (Google Fonts, licencia OFL) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- =========================================================
+       ANALÍTICA — pega aquí el script cuando lo tengas
+       (por ejemplo, Vercel Web Analytics o Plausible).
+       Ejemplo Vercel:
+       <script defer src="/_vercel/insights/script.js"></script>
+       ========================================================= -->
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================================================== -->
+  <!-- 1. CABECERA (con barra de progreso del scroll)         -->
+  <!-- ===================================================== -->
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="#inicio" aria-label="Perfil Edición, ir al inicio">
+        <svg class="logo__simbolo" viewBox="17 19 66 61" aria-hidden="true" focusable="false">
+          <g transform="translate(5 6)" fill="#111111" stroke="#111111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="22" width="56" height="40" rx="4"/><line x1="48" y1="56" x2="48" y2="72"/></g>
+          <rect x="20" y="22" width="56" height="40" rx="4" fill="#F8F7F3"/>
+          <g fill="none" stroke="#1259C3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M55 62 H72 Q76 62 76 58 V26 Q76 22 72 22 H24 Q20 22 20 26 V58 Q20 62 24 62 H41"/>
+            <line x1="32" y1="22" x2="32" y2="62"/><line x1="64" y1="22" x2="64" y2="62"/>
+            <line x1="20" y1="35.3" x2="32" y2="35.3"/><line x1="20" y1="48.7" x2="32" y2="48.7"/>
+            <line x1="64" y1="35.3" x2="76" y2="35.3"/><line x1="64" y1="48.7" x2="76" y2="48.7"/>
+            <polygon points="43.5,35 54,42 43.5,49" fill="#1259C3"/>
+            <line x1="48" y1="56" x2="48" y2="72"/>
+          </g>
+        </svg>
+        <span class="logo__nombre">Perfil Edición</span>
+      </a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#comunidad">Comunidad</a>
+      </nav>
+    </div>
+    <!-- Barra de progreso del scroll (decorativa) -->
+    <div class="progreso" aria-hidden="true"><div class="progreso__barra"></div></div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===================================================== -->
+    <!-- 2. PORTADA                                             -->
+    <!-- ===================================================== -->
+    <section class="portada fondo-grilla" id="inicio">
+      <div class="contenedor portada__grid">
+        <div class="portada__texto">
+          <p class="sello sello--tinta">Para editores de video</p>
+          <h1 class="titular">Menos pasos, <em class="subrayado">mejores</em> cortes.</h1>
+          <p class="bajada">Consejos de edición y recursos gratis para que dediques tu tiempo a lo creativo, no a lo repetitivo.</p>
+          <a class="boton boton--acento" href="#recursos">Ver recursos gratis <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <div class="portada__visual">
+          <!-- Símbolo animado: la tira avanza, el play late y el corte baja y sube.
+               Se muestra mientras no haya video (ver VIDEO_PORTADA en main.js). -->
+          <svg class="portada__simbolo simbolo-animado" data-simbolo viewBox="0 0 116 100" role="img" aria-label="Símbolo de Perfil Edición: una tira de película con un botón de play y una marca de corte">
+            <defs><clipPath id="clip-tira"><rect x="4" y="4" width="100" height="68" rx="4"/></clipPath></defs>
+            <g transform="translate(8 10)" fill="#111111" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="100" height="68" rx="4"/>
+              <line class="anim-corte" x1="54" y1="62" x2="54" y2="86"/>
+            </g>
+            <rect x="4" y="4" width="100" height="68" rx="4" fill="#F8F7F3"/>
+            <g fill="none" stroke="#1259C3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Perforaciones que se desplazan (recortadas al marco) -->
+              <g clip-path="url(#clip-tira)">
+                <g class="anim-tira">
+                  <line x1="4" y1="-13" x2="22" y2="-13"/><line x1="4" y1="4" x2="22" y2="4"/><line x1="4" y1="21" x2="22" y2="21"/><line x1="4" y1="38" x2="22" y2="38"/><line x1="4" y1="55" x2="22" y2="55"/>
+                  <line x1="86" y1="-13" x2="104" y2="-13"/><line x1="86" y1="4" x2="104" y2="4"/><line x1="86" y1="21" x2="104" y2="21"/><line x1="86" y1="38" x2="104" y2="38"/><line x1="86" y1="55" x2="104" y2="55"/>
+                </g>
+              </g>
+              <path d="M61 72 H100 Q104 72 104 68 V8 Q104 4 100 4 H8 Q4 4 4 8 V68 Q4 72 8 72 H47"/>
+              <line x1="22" y1="4" x2="22" y2="72"/><line x1="86" y1="4" x2="86" y2="72"/>
+              <polygon class="anim-play" points="46,24 66,36 46,48" fill="#1259C3"/>
+              <line class="anim-corte" x1="54" y1="62" x2="54" y2="86"/>
+            </g>
+          </svg>
+
+          <!-- Hueco para video: oculto hasta que completes VIDEO_PORTADA en main.js -->
+          <figure class="celular" data-video-marco hidden>
+            <span class="celular__parlante" aria-hidden="true"></span>
+            <video class="celular__video" muted loop playsinline preload="none" aria-label="Clip corto de mis ediciones"></video>
+            <button class="celular__pausa" type="button" data-video-pausa aria-pressed="false">Pausar video</button>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Separador con marca de corte -->
+    <div class="corte aparecer" aria-hidden="true"><span class="corte__linea"></span><span class="corte__marca"></span><span class="corte__linea"></span></div>
+
+    <!-- ===================================================== -->
+    <!-- 3. SOBRE MÍ (sin foto: no salgo en cámara)             -->
+    <!-- ===================================================== -->
+    <section class="seccion seccion--sobre" id="sobre-mi" aria-labelledby="t-sobre">
+      <div class="contenedor">
+        <p class="etiqueta">01 · Sobre mí</p>
+        <h2 class="titulo" id="t-sobre">Detrás de <em>cada</em> corte</h2>
+
+        <!-- Tres datos grandes: el número final está escrito aquí;
+             main.js solo lo anima desde 0 al aparecer. -->
+        <ul class="datos aparecer escalonado" role="list" data-contadores>
+          <li class="dato"><span class="dato__num" data-contar="3">3</span><span class="dato__txt">años editando video</span></li>
+          <li class="dato"><span class="dato__num" data-contar="30" data-prefijo="+" data-sufijo="k">+30k</span><span class="dato__txt">seguidores en TikTok</span></li>
+          <li class="dato"><span class="dato__num" data-contar="2" data-prefijo="+" data-sufijo="M" data-decimales="1">+2M</span><span class="dato__txt">vistas en mis videos</span></li>
+        </ul>
+
+        <div class="sobre__grid">
+          <!-- Qué hago -->
+          <div>
+            <h3 class="etiqueta">Qué hago</h3>
+            <ul class="hago aparecer escalonado" role="list">
+              <li class="hago__item">
+                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="3" y="7" width="26" height="18" rx="2"/><path d="M13 12 L20 16 L13 20 Z" class="relleno"/></svg>
+                <span>Edito video</span>
+              </li>
+              <li class="hago__item">
+                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 7 H27 V21 H15 L9 26 V21 H5 Z"/><line x1="10" y1="12.5" x2="22" y2="12.5"/><line x1="10" y1="16.5" x2="18" y2="16.5"/></svg>
+                <span>Doy consejos de edición</span>
+              </li>
+              <li class="hago__item">
+                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M11 9 L4 16 L11 23"/><path d="M21 9 L28 16 L21 23"/><path d="M18 6 L14 26"/></svg>
+                <span>Soy programador</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Clientes en: banderas dibujadas en SVG (sin emojis) -->
+          <div>
+            <h3 class="etiqueta">Clientes en</h3>
+            <ul class="banderas aparecer escalonado" role="list">
+              <li class="bandera">
+                <svg class="bandera__svg" viewBox="0 0 60 45" aria-hidden="true" focusable="false">
+                  <rect width="60" height="45" fill="#D64545"/>
+                  <g fill="#F8F7F3"><rect y="3.46" width="60" height="3.46"/><rect y="10.38" width="60" height="3.46"/><rect y="17.3" width="60" height="3.46"/><rect y="24.23" width="60" height="3.46"/><rect y="31.15" width="60" height="3.46"/><rect y="38.07" width="60" height="3.46"/></g>
+                  <rect width="26" height="24.23" fill="#1259C3"/>
+                  <g fill="#F8F7F3"><polygon points="3.00,1.40 3.44,2.59 4.71,2.64 3.71,3.43 4.06,4.66 3.00,3.95 1.94,4.66 2.29,3.43 1.29,2.64 2.56,2.59"/><polygon points="8.00,1.40 8.44,2.59 9.71,2.64 8.71,3.43 9.06,4.66 8.00,3.95 6.94,4.66 7.29,3.43 6.29,2.64 7.56,2.59"/><polygon points="13.00,1.40 13.44,2.59 14.71,2.64 13.71,3.43 14.06,4.66 13.00,3.95 11.94,4.66 12.29,3.43 11.29,2.64 12.56,2.59"/><polygon points="18.00,1.40 18.44,2.59 19.71,2.64 18.71,3.43 19.06,4.66 18.00,3.95 16.94,4.66 17.29,3.43 16.29,2.64 17.56,2.59"/><polygon points="23.00,1.40 23.44,2.59 24.71,2.64 23.71,3.43 24.06,4.66 23.00,3.95 21.94,4.66 22.29,3.43 21.29,2.64 22.56,2.59"/><polygon points="5.50,5.80 5.94,6.99 7.21,7.04 6.21,7.83 6.56,9.06 5.50,8.35 4.44,9.06 4.79,7.83 3.79,7.04 5.06,6.99"/><polygon points="10.50,5.80 10.94,6.99 12.21,7.04 11.21,7.83 11.56,9.06 10.50,8.35 9.44,9.06 9.79,7.83 8.79,7.04 10.06,6.99"/><polygon points="15.50,5.80 15.94,6.99 17.21,7.04 16.21,7.83 16.56,9.06 15.50,8.35 14.44,9.06 14.79,7.83 13.79,7.04 15.06,6.99"/><polygon points="20.50,5.80 20.94,6.99 22.21,7.04 21.21,7.83 21.56,9.06 20.50,8.35 19.44,9.06 19.79,7.83 18.79,7.04 20.06,6.99"/><polygon points="3.00,10.20 3.44,11.39 4.71,11.44 3.71,12.23 4.06,13.46 3.00,12.75 1.94,13.46 2.29,12.23 1.29,11.44 2.56,11.39"/><polygon points="8.00,10.20 8.44,11.39 9.71,11.44 8.71,12.23 9.06,13.46 8.00,12.75 6.94,13.46 7.29,12.23 6.29,11.44 7.56,11.39"/><polygon points="13.00,10.20 13.44,11.39 14.71,11.44 13.71,12.23 14.06,13.46 13.00,12.75 11.94,13.46 12.29,12.23 11.29,11.44 12.56,11.39"/><polygon points="18.00,10.20 18.44,11.39 19.71,11.44 18.71,12.23 19.06,13.46 18.00,12.75 16.94,13.46 17.29,12.23 16.29,11.44 17.56,11.39"/><polygon points="23.00,10.20 23.44,11.39 24.71,11.44 23.71,12.23 24.06,13.46 23.00,12.75 21.94,13.46 22.29,12.23 21.29,11.44 22.56,11.39"/><polygon points="5.50,14.60 5.94,15.79 7.21,15.84 6.21,16.63 6.56,17.86 5.50,17.15 4.44,17.86 4.79,16.63 3.79,15.84 5.06,15.79"/><polygon points="10.50,14.60 10.94,15.79 12.21,15.84 11.21,16.63 11.56,17.86 10.50,17.15 9.44,17.86 9.79,16.63 8.79,15.84 10.06,15.79"/><polygon points="15.50,14.60 15.94,15.79 17.21,15.84 16.21,16.63 16.56,17.86 15.50,17.15 14.44,17.86 14.79,16.63 13.79,15.84 15.06,15.79"/><polygon points="20.50,14.60 20.94,15.79 22.21,15.84 21.21,16.63 21.56,17.86 20.50,17.15 19.44,17.86 19.79,16.63 18.79,15.84 20.06,15.79"/><polygon points="3.00,19.00 3.44,20.19 4.71,20.24 3.71,21.03 4.06,22.26 3.00,21.55 1.94,22.26 2.29,21.03 1.29,20.24 2.56,20.19"/><polygon points="8.00,19.00 8.44,20.19 9.71,20.24 8.71,21.03 9.06,22.26 8.00,21.55 6.94,22.26 7.29,21.03 6.29,20.24 7.56,20.19"/><polygon points="13.00,19.00 13.44,20.19 14.71,20.24 13.71,21.03 14.06,22.26 13.00,21.55 11.94,22.26 12.29,21.03 11.29,20.24 12.56,20.19"/><polygon points="18.00,19.00 18.44,20.19 19.71,20.24 18.71,21.03 19.06,22.26 18.00,21.55 16.94,22.26 17.29,21.03 16.29,20.24 17.56,20.19"/><polygon points="23.00,19.00 23.44,20.19 24.71,20.24 23.71,21.03 24.06,22.26 23.00,21.55 21.94,22.26 22.29,21.03 21.29,20.24 22.56,20.19"/></g>
+                </svg>
+                <span>Estados Unidos</span>
+              </li>
+              <li class="bandera">
+                <svg class="bandera__svg" viewBox="0 0 60 45" aria-hidden="true" focusable="false">
+                  <rect width="20" height="45" fill="#1F9D55"/><rect x="20" width="20" height="45" fill="#F8F7F3"/><rect x="40" width="20" height="45" fill="#D64545"/>
+                  <!-- Escudo simplificado: águila sobre el nopal, serpiente y laurel -->
+                  <g transform="translate(30 22) scale(1.12) translate(-30 -22)">
+                  <g fill="none" stroke="#1F9D55" stroke-width="1" stroke-linecap="round"><path d="M24 19.5 Q23.4 26.5 28.8 29.6"/><path d="M36 19.5 Q36.6 26.5 31.2 29.6"/></g>
+                  <g fill="#1F9D55"><ellipse cx="23.7" cy="22" rx="1.2" ry=".55" transform="rotate(-70 23.7 22)"/><ellipse cx="24.2" cy="25" rx="1.2" ry=".55" transform="rotate(-50 24.2 25)"/><ellipse cx="25.8" cy="27.6" rx="1.2" ry=".55" transform="rotate(-30 25.8 27.6)"/><ellipse cx="36.3" cy="22" rx="1.2" ry=".55" transform="rotate(70 36.3 22)"/><ellipse cx="35.8" cy="25" rx="1.2" ry=".55" transform="rotate(50 35.8 25)"/><ellipse cx="34.2" cy="27.6" rx="1.2" ry=".55" transform="rotate(30 34.2 27.6)"/></g>
+                  <g fill="#1F9D55"><ellipse cx="27.3" cy="26.6" rx="2.2" ry="1.4"/><ellipse cx="30.4" cy="26" rx="2" ry="1.5"/><ellipse cx="33.2" cy="26.8" rx="2" ry="1.3"/><rect x="29.6" y="26.5" width="1.6" height="2.6" rx=".5"/></g>
+                  <path d="M28.6 19.6 Q29.6 13.4 33.4 12 L33 13.8 L35.8 12.8 L35 15 L37 14.6 L35.6 17 L37 17.4 L34.8 19.4 L35.4 21 L33 21.6 L31 24.6 Z" fill="#7A4A22"/>
+                  <path d="M26.2 17.4 Q28.8 16.4 30.4 19.2 Q31.8 22.2 31.2 25 L28.2 25 Q26.6 22 27 19.6 Z" fill="#5C3618"/>
+                  <circle cx="26.4" cy="17" r="1.45" fill="#5C3618"/>
+                  <polygon points="25.1,16.5 23.7,17.3 25.1,17.9" fill="#F2B630"/>
+                  <path d="M24 17.6 Q23.2 19.8 24.8 20.8 Q26 21.8 24.9 23.4" fill="none" stroke="#1F9D55" stroke-width=".9" stroke-linecap="round"/>
+                  </g>
+                </svg>
+                <span>México</span>
+              </li>
+              <li class="bandera">
+                <svg class="bandera__svg" viewBox="0 0 60 45" aria-hidden="true" focusable="false">
+                  <rect width="60" height="22.5" fill="#F2B630"/><rect y="22.5" width="60" height="11.25" fill="#1259C3"/><rect y="33.75" width="60" height="11.25" fill="#D64545"/>
+                </svg>
+                <span>Colombia</span>
+              </li>
+              <li class="bandera">
+                <svg class="bandera__svg" viewBox="0 0 60 45" aria-hidden="true" focusable="false">
+                  <rect width="20" height="45" fill="#D64545"/><rect x="20" width="20" height="45" fill="#F8F7F3"/><rect x="40" width="20" height="45" fill="#D64545"/>
+                </svg>
+                <span>Perú</span>
+              </li>
+              <li class="bandera">
+                <svg class="bandera__svg" viewBox="0 0 60 45" aria-hidden="true" focusable="false">
+                  <rect width="60" height="45" fill="#8FB0F2"/><rect y="15" width="60" height="15" fill="#F8F7F3"/>
+                  <!-- Sol de Mayo simplificado -->
+                  <g stroke="#F2B630" stroke-width="1.1" stroke-linecap="round"><line x1="33.60" y1="22.50" x2="36.20" y2="22.50"/><line x1="33.33" y1="23.88" x2="34.99" y2="24.57"/><line x1="32.55" y1="25.05" x2="34.38" y2="26.88"/><line x1="31.38" y1="25.83" x2="32.07" y2="27.49"/><line x1="30.00" y1="26.10" x2="30.00" y2="28.70"/><line x1="28.62" y1="25.83" x2="27.93" y2="27.49"/><line x1="27.45" y1="25.05" x2="25.62" y2="26.88"/><line x1="26.67" y1="23.88" x2="25.01" y2="24.57"/><line x1="26.40" y1="22.50" x2="23.80" y2="22.50"/><line x1="26.67" y1="21.12" x2="25.01" y2="20.43"/><line x1="27.45" y1="19.95" x2="25.62" y2="18.12"/><line x1="28.62" y1="19.17" x2="27.93" y2="17.51"/><line x1="30.00" y1="18.90" x2="30.00" y2="16.30"/><line x1="31.38" y1="19.17" x2="32.07" y2="17.51"/><line x1="32.55" y1="19.95" x2="34.38" y2="18.12"/><line x1="33.33" y1="21.12" x2="34.99" y2="20.43"/></g>
+                  <circle cx="30" cy="22.5" r="3.2" fill="#F2B630"/>
+                </svg>
+                <span>Argentina</span>
+              </li>
+              <li class="bandera">
+                <svg class="bandera__svg" viewBox="0 0 60 45" aria-hidden="true" focusable="false">
+                  <rect width="60" height="45" fill="#1259C3"/><rect y="7.5" width="60" height="30" fill="#F8F7F3"/><rect y="15" width="60" height="15" fill="#D64545"/>
+                </svg>
+                <span>Costa Rica</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 4. RECURSOS GRATIS (fondo azul de marca)               -->
+    <!-- ===================================================== -->
+    <section class="seccion seccion--acento" id="recursos" aria-labelledby="t-recursos">
+      <div class="contenedor">
+        <p class="etiqueta">02 · Recursos</p>
+        <h2 class="titulo" id="t-recursos">Recursos <em>gratis</em></h2>
+        <p class="intro">Todo está en una sola carpeta de Drive. Son recursos propios, creados por mí. Descárgalos sin registro y sin dejar tu correo.</p>
+
+        <!-- Mini explicación en 3 pasos -->
+        <ol class="pasos aparecer escalonado">
+          <li><span class="pasos__n">1</span>Entra a la carpeta</li>
+          <li><span class="pasos__n">2</span>Elige lo que te sirve</li>
+          <li><span class="pasos__n">3</span>Descarga</li>
+        </ol>
+
+        <!-- Las 7 categorías.
+             MINIATURAS REALES: para cambiar una vista previa dibujada por una foto,
+             reemplaza el contenido de su <div class="recurso__vista"> por:
+             <img src="miniaturas/nombre.webp" alt="" width="400" height="240" loading="lazy">
+             (alt vacío porque el título de la tarjeta ya lo describe). -->
+        <ul class="recursos aparecer escalonado" role="list">
+          <li class="recurso">
+            <div class="recurso__vista vista-grilla" aria-hidden="true"><span class="vista-grilla__bloque"></span></div>
+            <div class="recurso__pie"><span class="recurso__n">01</span><h3 class="recurso__t">Fondos con grilla de líneas</h3></div>
+          </li>
+          <li class="recurso">
+            <div class="recurso__vista vista-motion" aria-hidden="true"><span class="vista-motion__a"></span><span class="vista-motion__b"></span></div>
+            <div class="recurso__pie"><span class="recurso__n">02</span><h3 class="recurso__t">Motion backgrounds</h3></div>
+          </li>
+          <li class="recurso">
+            <div class="recurso__vista vista-overlay" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="recurso__pie"><span class="recurso__n">03</span><h3 class="recurso__t">Overlays</h3></div>
+          </li>
+          <li class="recurso">
+            <div class="recurso__vista vista-rayos" aria-hidden="true">
+              <svg viewBox="0 0 120 72"><polygon class="rayo rayo--1" points="62,6 44,40 58,40 50,66 76,28 61,28 70,6" /><polygon class="rayo rayo--2" points="30,14 22,32 29,32 25,46 38,26 31,26 35,14"/><polygon class="rayo rayo--3" points="94,20 86,38 93,38 89,52 102,32 95,32 99,20"/></svg>
+            </div>
+            <div class="recurso__pie"><span class="recurso__n">04</span><h3 class="recurso__t">Rayos</h3></div>
+          </li>
+          <li class="recurso">
+            <div class="recurso__vista vista-papel" aria-hidden="true">
+              <svg viewBox="0 0 120 72"><path class="hoja" d="M30 8 H78 L92 22 V60 L86 63 L80 60 L74 63 L68 60 L62 63 L56 60 L50 63 L44 60 L38 63 L30 60 Z"/><path class="doblez" d="M78 8 V22 H92 Z"/><line x1="40" y1="30" x2="80" y2="30"/><line x1="40" y1="38" x2="74" y2="38"/><line x1="40" y1="46" x2="78" y2="46"/></svg>
+            </div>
+            <div class="recurso__pie"><span class="recurso__n">05</span><h3 class="recurso__t">Recursos de papel</h3></div>
+          </li>
+          <li class="recurso">
+            <div class="recurso__vista vista-seguir" aria-hidden="true">
+              <span class="vista-seguir__boton"><span class="vista-seguir__mas">+</span>Seguir</span>
+              <svg class="vista-seguir__cursor" viewBox="0 0 24 24"><path d="M5 3 L19 12 L12.5 13.5 L16 20.5 L13 22 L9.5 15 L5 19 Z"/></svg>
+            </div>
+            <div class="recurso__pie"><span class="recurso__n">06</span><h3 class="recurso__t">Animación de seguir</h3></div>
+          </li>
+          <li class="recurso">
+            <div class="recurso__vista vista-sonido" aria-hidden="true">
+              <span style="--h:.35"></span><span style="--h:.7"></span><span style="--h:.5"></span><span style="--h:.95"></span><span style="--h:.6"></span><span style="--h:.8"></span><span style="--h:.4"></span><span style="--h:.75"></span><span style="--h:.3"></span><span style="--h:.55"></span><span style="--h:.85"></span><span style="--h:.45"></span>
+            </div>
+            <div class="recurso__pie"><span class="recurso__n">07</span><h3 class="recurso__t">Sonidos</h3></div>
+          </li>
+        </ul>
+
+        <!-- El enlace real se define en main.js (ENLACE_DRIVE). Este href es solo respaldo. -->
+        <a class="boton boton--papel" data-enlace="drive" href="https://drive.google.com/drive/folders/1FXDxT6zBFRgM-xHpAlX5bew2_E1DRwOv" target="_blank" rel="noopener">
+          Abrir la carpeta de Drive <span aria-hidden="true">↗</span><span class="solo-lector"> (se abre en una pestaña nueva)</span>
+        </a>
+        <p class="licencia">Úsalos en tus proyectos y en los de tus clientes. No los revendas ni los subas como si fueran tuyos.</p>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 5. COMUNIDAD · PRÓXIMAMENTE (fondo noche)              -->
+    <!-- ===================================================== -->
+    <section class="seccion seccion--noche fondo-grilla--oscura" id="comunidad" aria-labelledby="t-comunidad">
+      <div class="contenedor">
+        <p class="sello sello--claro">Próximamente</p>
+        <h2 class="titulo" id="t-comunidad">Una comunidad para editar <em>sin</em> pasos de más</h2>
+        <p class="intro">Estoy preparando herramientas que eliminan pasos manuales de la edición, dentro de una comunidad privada. Todavía están en desarrollo.</p>
+
+        <!-- Tarjetas bloqueadas: sin nombres ni funciones hasta que existan.
+             El candado se sacude al pasar el mouse o al tocar la tarjeta. -->
+        <ul class="bloqueadas aparecer escalonado" role="list">
+          <li class="bloqueada" data-bloqueada>
+            <svg class="candado" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="10.5" width="16" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+            <h3 class="bloqueada__t">Herramienta 01</h3>
+            <span class="bloqueada__e">En desarrollo</span>
+          </li>
+          <li class="bloqueada" data-bloqueada>
+            <svg class="candado" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="10.5" width="16" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+            <h3 class="bloqueada__t">Herramienta 02</h3>
+            <span class="bloqueada__e">En desarrollo</span>
+          </li>
+          <li class="bloqueada" data-bloqueada>
+            <svg class="candado" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="10.5" width="16" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+            <h3 class="bloqueada__t">Herramienta 03</h3>
+            <span class="bloqueada__e">En desarrollo</span>
+          </li>
+        </ul>
+
+        <div class="espera">
+          <p class="espera__frase">Avísame cuando abra</p>
+          <!-- main.js activa este botón solo si ENLACE_LISTA_ESPERA tiene un enlace.
+               Mientras esté vacío, se muestra apagado y no lleva a ningún lado. -->
+          <a class="boton boton--claro" data-enlace="espera" role="link" aria-disabled="true" aria-describedby="nota-correo">
+            <span data-texto-boton>Lista de espera: pronto</span>
+          </a>
+          <p class="espera__nota" id="nota-correo">Uso tu correo solo para avisarte cuando abra.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 6. PREGUNTAS FRECUENTES                               -->
+    <!-- ===================================================== -->
+    <section class="seccion seccion--faq" id="preguntas" aria-labelledby="t-faq">
+      <div class="contenedor faq__grid">
+        <div>
+          <p class="etiqueta">03 · Preguntas</p>
+          <h2 class="titulo" id="t-faq">Preguntas <em>frecuentes</em></h2>
+        </div>
+        <div class="faq aparecer escalonado">
+          <details class="faq__item">
+            <summary>¿Es gratis de verdad?</summary>
+            <p>Sí. Entras a la carpeta y descargas lo que quieras, sin registro y sin dejar tu correo.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Puedo usarlos en videos de clientes?</summary>
+            <p>Sí. Puedes usarlos en tus proyectos y en los de tus clientes. Lo único que no puedes hacer es revenderlos o subirlos como si fueran tuyos.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Cuándo abre la comunidad?</summary>
+            <p>Todavía no hay fecha. Las herramientas están en desarrollo. Anótate en la lista de espera y te aviso cuando abra.</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Compartir: usa el menú nativo del celular o copia el enlace -->
+      <div class="contenedor compartir">
+        <button class="boton boton--tinta" type="button" data-compartir>Compartir esta página</button>
+        <p class="compartir__estado" role="status" aria-live="polite" data-compartir-estado></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================== -->
+  <!-- 7. PIE                                                 -->
+  <!-- ===================================================== -->
+  <footer class="pie">
+    <div class="contenedor pie__fila">
+      <p>© Perfil Edición · @perfil_edicion</p>
+      <a data-enlace="tiktok" href="https://www.tiktok.com/@perfil_edicion" target="_blank" rel="noopener">TikTok <span aria-hidden="true">↗</span><span class="solo-lector"> (se abre en una pestaña nueva)</span></a>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
