@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ===== METADATOS ===== -->
-  <title>Perfil Edición · Recursos y consejos para editores de video</title>
-  <meta name="description" content="Consejos de edición y recursos gratis para editores de video: fondos, overlays, sonidos y más. Pronto, una comunidad con herramientas que eliminan pasos manuales.">
+  <title>Perfil Edición · Edición de videos cortos desde US$25</title>
+  <meta name="description" content="Edito tus videos cortos para TikTok, Reels y Shorts: cortes, subtítulos, zooms y sonido. Desde US$25 por video o planes de 12 y 20 videos al mes. Además, recursos gratis para editores.">
   <meta name="theme-color" content="#F8F7F3">
 
   <!-- =========================================================
@@ -24,8 +24,8 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_LA">
   <meta property="og:site_name" content="Perfil Edición">
-  <meta property="og:title" content="Perfil Edición · Menos pasos, mejores cortes.">
-  <meta property="og:description" content="Consejos de edición y recursos gratis para editores de video.">
+  <meta property="og:title" content="Perfil Edición · Videos que se miran hasta el final">
+  <meta property="og:description" content="Edito tus videos cortos desde US$25. Escríbeme EDITAR en TikTok.">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Logo de Perfil Edición y el lema Menos pasos, mejores cortes.">
@@ -72,6 +72,7 @@
         <span class="logo__nombre">Perfil Edición</span>
       </a>
       <nav class="nav" aria-label="Secciones">
+        <a href="#servicio">Precios</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#recursos">Recursos</a>
         <a href="#comunidad">Comunidad</a>
@@ -89,10 +90,14 @@
     <section class="portada fondo-grilla" id="inicio">
       <div class="contenedor portada__grid">
         <div class="portada__texto">
-          <p class="sello sello--tinta">Para editores de video</p>
-          <h1 class="titular">Menos pasos, <em class="subrayado">mejores</em> cortes.</h1>
-          <p class="bajada">Consejos de edición y recursos gratis para que dediques tu tiempo a lo creativo, no a lo repetitivo.</p>
-          <a class="boton boton--acento" href="#recursos">Ver recursos gratis <span aria-hidden="true">↓</span></a>
+          <p class="sello sello--tinta">Editor de video</p>
+          <h1 class="titular">Videos que se miran <em class="subrayado">hasta</em> el final.</h1>
+          <p class="bajada">Edito tus videos cortos para TikTok, Reels y Shorts. Tú grabas, yo hago el resto. Desde US$25 por video.</p>
+          <!-- Primero lo que se vende (precios); los recursos gratis quedan como segunda opción -->
+          <div class="portada__botones">
+            <a class="boton boton--acento" href="#servicio">Ver precios <span aria-hidden="true">↓</span></a>
+            <a class="boton boton--papel" href="#recursos">Recursos gratis</a>
+          </div>
         </div>
 
         <div class="portada__visual">
@@ -133,12 +138,72 @@
     <!-- Separador con marca de corte -->
     <div class="corte aparecer" aria-hidden="true"><span class="corte__linea"></span><span class="corte__marca"></span><span class="corte__linea"></span></div>
 
+
+    <!-- ===================================================== -->
+    <!-- 2b. SERVICIO Y PRECIOS                                 -->
+    <!-- Los precios los decidió Efraín el 10/11/2026. Si cambian, -->
+    <!-- se cambian acá y en los carruseles fijados (C36 a C38). -->
+    <!-- ===================================================== -->
+    <section class="seccion seccion--servicio" id="servicio" aria-labelledby="t-servicio">
+      <div class="contenedor">
+        <p class="etiqueta">01 · Servicio</p>
+        <h2 class="titulo" id="t-servicio">Edito tus videos, <em>tú</em> solo los subes</h2>
+        <p class="intro">Para negocios, marcas personales y creadores que tienen qué decir, pero no tiempo para editar. Con la misma estructura de mis videos: gancho en los primeros 3 segundos y el pedido antes de que se vayan.</p>
+
+        <!-- Tres planes. El del medio va destacado: es el que conviene para crecer. -->
+        <ul class="planes aparecer escalonado" role="list">
+          <li class="plan">
+            <h3 class="plan__t">Video suelto</h3>
+            <p class="plan__precio">US$25</p>
+            <p class="plan__det">1 video, para probar cómo trabajo.</p>
+          </li>
+          <li class="plan plan--destacado">
+            <span class="plan__sello">Para crecer</span>
+            <h3 class="plan__t">12 videos al mes</h3>
+            <p class="plan__precio">US$249</p>
+            <p class="plan__det">3 por semana. Unos US$21 cada uno.</p>
+          </li>
+          <li class="plan">
+            <h3 class="plan__t">20 videos al mes</h3>
+            <p class="plan__precio">US$399</p>
+            <p class="plan__det">5 por semana. Unos US$20 cada uno.</p>
+          </li>
+        </ul>
+
+        <div class="servicio__grid">
+          <div>
+            <h3 class="etiqueta">Qué recibes</h3>
+            <ul class="incluye" role="list">
+              <li>Cortes sin pausas</li>
+              <li>Subtítulos animados</li>
+              <li>Zooms y b-roll con intención</li>
+              <li>Sonidos y música</li>
+              <li>Vertical para TikTok, Reels y Shorts</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="etiqueta">Cómo trabajamos</h3>
+            <ol class="pasos pasos--columna">
+              <li><span class="pasos__n">1</span>Me escribes EDITAR</li>
+              <li><span class="pasos__n">2</span>Me mandas tus crudos</li>
+              <li><span class="pasos__n">3</span>Recibes tu video listo</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- El contacto es por mensaje en TikTok (decisión del 10/11/2026) -->
+        <a class="boton boton--acento" data-enlace="tiktok" href="https://www.tiktok.com/@perfil_edicion" target="_blank" rel="noopener">
+          Escríbeme EDITAR en TikTok <span aria-hidden="true">↗</span><span class="solo-lector"> (se abre en una pestaña nueva)</span>
+        </a>
+      </div>
+    </section>
+
     <!-- ===================================================== -->
     <!-- 3. SOBRE MÍ (sin foto: no salgo en cámara)             -->
     <!-- ===================================================== -->
     <section class="seccion seccion--sobre" id="sobre-mi" aria-labelledby="t-sobre">
       <div class="contenedor">
-        <p class="etiqueta">01 · Sobre mí</p>
+        <p class="etiqueta">02 · Sobre mí</p>
         <h2 class="titulo" id="t-sobre">Detrás de <em>cada</em> corte</h2>
 
         <!-- Tres datos grandes: el número final está escrito aquí;
@@ -237,7 +302,7 @@
     <!-- ===================================================== -->
     <section class="seccion seccion--acento" id="recursos" aria-labelledby="t-recursos">
       <div class="contenedor">
-        <p class="etiqueta">02 · Recursos</p>
+        <p class="etiqueta">03 · Recursos</p>
         <h2 class="titulo" id="t-recursos">Recursos <em>gratis</em></h2>
         <p class="intro">Todo está en una sola carpeta de Drive. Son recursos propios, creados por mí. Descárgalos sin registro y sin dejar tu correo.</p>
 
@@ -348,12 +413,20 @@
     <section class="seccion seccion--faq" id="preguntas" aria-labelledby="t-faq">
       <div class="contenedor faq__grid">
         <div>
-          <p class="etiqueta">03 · Preguntas</p>
+          <p class="etiqueta">04 · Preguntas</p>
           <h2 class="titulo" id="t-faq">Preguntas <em>frecuentes</em></h2>
         </div>
         <div class="faq aparecer escalonado">
           <details class="faq__item">
-            <summary>¿Es gratis de verdad?</summary>
+            <summary>¿Cuánto cuesta que edites mis videos?</summary>
+            <p>Un video suelto cuesta US$25. Por mes: 12 videos a US$249 o 20 videos a US$399.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Cómo te contrato?</summary>
+            <p>Escríbeme EDITAR por mensaje en TikTok. Te pregunto tu rubro y cuántos videos quieres por mes.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Los recursos son gratis de verdad?</summary>
             <p>Sí. Entras a la carpeta y descargas lo que quieras, sin registro y sin dejar tu correo.</p>
           </details>
           <details class="faq__item">

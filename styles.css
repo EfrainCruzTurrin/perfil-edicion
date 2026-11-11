@@ -295,6 +295,51 @@ a:hover { color: var(--tinta); }
 /* ---------- Secciones generales ---------- */
 .seccion { padding: 64px 0 72px; }
 
+/* ---------- 2b. Servicio y precios ---------- */
+.portada__botones { display: flex; flex-wrap: wrap; gap: 14px 18px; }
+.planes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 26px 18px;
+  margin-bottom: 48px;
+}
+/* Tarjeta de plan: el mismo borde y sombra dura que las de recursos */
+.plan {
+  position: relative;
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 22px 20px 24px;
+  background: var(--papel);
+  border: var(--borde) solid var(--tinta); border-radius: var(--radio);
+  box-shadow: 4px 5px 0 var(--tinta);
+}
+.plan--destacado { background: var(--acento); color: var(--papel); }
+.plan__sello {
+  position: absolute; top: -14px; left: 16px;
+  padding: 2px 10px;
+  background: var(--tinta); color: var(--papel);
+  font-family: var(--f-etiqueta); font-weight: 700; font-size: 13px;
+  letter-spacing: .08em; text-transform: uppercase;
+  border-radius: var(--radio);
+}
+.plan__t { font-family: var(--f-etiqueta); font-weight: 700; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; }
+.plan__precio {
+  font-family: var(--f-nombre); font-weight: 700;
+  font-size: clamp(48px, 12vw, 64px); line-height: 1;
+  color: var(--acento); font-variant-numeric: tabular-nums;
+}
+.plan--destacado .plan__precio { color: var(--papel); }
+.plan__det { font-size: 16px; }
+.servicio__grid { display: grid; gap: 32px; margin-bottom: 40px; }
+.incluye { display: grid; gap: 10px; font-size: 18px; }
+/* Tilde verde con texto, sin emojis */
+.incluye li { display: flex; gap: 12px; align-items: baseline; }
+.incluye li::before { content: "✓"; color: var(--bien); font-weight: 700; }
+.pasos--columna { flex-direction: column; align-items: flex-start; }
+.pasos--columna li + li::before { content: none; }
+@media (min-width: 720px) {
+  .servicio__grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+}
+
 /* ---------- 3. Sobre mí ---------- */
 .seccion--sobre { padding-top: 40px; }
 .datos {
@@ -589,6 +634,7 @@ a:hover { color: var(--tinta); }
   .celular { width: 280px; }
   .sobre__grid { grid-template-columns: 1fr 1.2fr; gap: 72px; }
   .recursos { grid-template-columns: repeat(4, 1fr); }
+  .planes { grid-template-columns: repeat(3, 1fr); }
   .bloqueadas { grid-template-columns: repeat(3, 1fr); }
 }
 
