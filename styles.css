@@ -340,6 +340,72 @@ a:hover { color: var(--tinta); }
   .servicio__grid { grid-template-columns: 1fr 1fr; gap: 48px; }
 }
 
+/* Dos servicios (17/11/2026): el lema en serif y una lista corta */
+.plan__lema { font-family: var(--f-titulo); font-size: 30px; line-height: 1.05; margin: 4px 0 6px; }
+.plan--destacado .plan__lema { color: var(--papel); }
+.incluye--chico { font-size: 16px; gap: 6px; margin-top: 12px; }
+.plan--destacado .incluye li::before { color: var(--papel); }
+.seccion--servicio .pasos { margin-bottom: 40px; }
+@media (min-width: 720px) {
+  .planes--dos { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- 2b. Trabajos: videos verticales en marco de celular ---------- */
+.trabajos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  gap: 40px 28px;
+}
+.trabajo { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+/* Celular más chico que el de la portada, para que entren varios */
+.celular--chico { width: 100%; max-width: 250px; padding: 18px 7px 7px; border-radius: 18px; }
+.celular--chico .celular__parlante { top: 6px; width: 40px; height: 5px; margin-left: -20px; }
+.celular--chico .celular__video { object-fit: contain; border-radius: 10px; }
+.trabajo__rubro { font-family: var(--f-nombre); font-weight: 700; font-size: 21px; line-height: 1.1; text-align: center; }
+.trabajo__det { font-size: 15px; color: var(--gris); text-align: center; max-width: 250px; }
+
+/* ---------- 4. Contacto: formulario sobre fondo azul ---------- */
+.formulario { display: grid; gap: 22px; max-width: 760px; }
+.campo { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
+/* Solo el título del campo va en mayúsculas (no las opciones) */
+.campo:not(.campo--opciones) > label, .campo legend {
+  font-family: var(--f-etiqueta); font-weight: 700; font-size: 15px;
+  letter-spacing: .06em; text-transform: uppercase; padding: 0; margin-bottom: 4px;
+}
+.campo__opcional { text-transform: none; letter-spacing: 0; font-weight: 500; opacity: .85; }
+.campo input[type="text"], .campo textarea {
+  width: 100%; min-height: 52px; padding: 12px 14px;
+  font: inherit; font-size: 17px;
+  background: var(--papel); color: var(--tinta);
+  border: var(--borde) solid var(--tinta); border-radius: var(--radio);
+  box-shadow: 4px 5px 0 var(--tinta);
+}
+.campo textarea { resize: vertical; }
+.campo input::placeholder, .campo textarea::placeholder { color: var(--gris); }
+/* Opciones: cada una es una fila tocable de 48 px o más */
+.campo--opciones label {
+  display: flex; align-items: center; gap: 12px;
+  min-height: 48px; padding: 10px 14px;
+  font-family: var(--f-texto); font-size: 17px; font-weight: 500;
+  background: var(--papel); color: var(--tinta);
+  border: var(--borde) solid var(--tinta); border-radius: var(--radio);
+  cursor: pointer;
+}
+.campo--opciones label + label { margin-top: 2px; }
+.campo--opciones input { width: 20px; height: 20px; flex: none; accent-color: var(--acento); margin: 0; }
+.campo--opciones label:has(input:checked) { background: var(--tinta); color: var(--papel); }
+.formulario__error { font-family: var(--f-etiqueta); font-weight: 700; font-size: 16px; min-height: 1em; }
+.formulario__error:empty { display: none; }
+.formulario .boton { justify-self: start; }
+.formulario__nota { font-size: 15px; }
+@media (min-width: 720px) {
+  .formulario { grid-template-columns: 1fr 1fr; gap: 26px 28px; }
+  .campo--opciones, .campo--ancho, .formulario__error, .formulario .boton, .formulario__nota { grid-column: 1 / -1; }
+}
+
+/* Página de recursos: la sección azul arranca pegada a la cabecera */
+.seccion--primera { border-top: none; }
+
 /* ---------- 3. Sobre mí ---------- */
 .seccion--sobre { padding-top: 40px; }
 .datos {

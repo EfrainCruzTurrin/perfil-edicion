@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ===== METADATOS ===== -->
-  <title>Perfil Edición · Edición de videos cortos desde US$25</title>
-  <meta name="description" content="Edito tus videos cortos para TikTok, Reels y Shorts: cortes, subtítulos, zooms y sonido. Desde US$25 por video o planes de 12 y 20 videos al mes. Además, recursos gratis para editores.">
+  <title>Perfil Edición · Videos cortos para negocios y marcas personales</title>
+  <meta name="description" content="Edito y creo videos cortos para TikTok, Reels y Shorts: ideas, guion y edición para que tu negocio o tu marca personal consiga clientes. Clientes en 6 países.">
   <meta name="theme-color" content="#F8F7F3">
 
   <!-- =========================================================
@@ -24,8 +24,8 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_LA">
   <meta property="og:site_name" content="Perfil Edición">
-  <meta property="og:title" content="Perfil Edición · Videos que se miran hasta el final">
-  <meta property="og:description" content="Edito tus videos cortos desde US$25. Escríbeme EDITAR en TikTok.">
+  <meta property="og:title" content="Perfil Edición · Videos cortos que te traen clientes">
+  <meta property="og:description" content="Ideas, guion y edición de videos cortos para negocios y marcas personales. Cuéntame qué necesitas.">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Logo de Perfil Edición y el lema Menos pasos, mejores cortes.">
@@ -72,10 +72,11 @@
         <span class="logo__nombre">Perfil Edición</span>
       </a>
       <nav class="nav" aria-label="Secciones">
-        <a href="#servicio">Precios</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#recursos">Recursos</a>
-        <a href="#comunidad">Comunidad</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <!-- Los recursos para editores viven en su propia página (17/11/2026) -->
+        <a href="recursos.html">Recursos</a>
       </nav>
     </div>
     <!-- Barra de progreso del scroll (decorativa) -->
@@ -90,13 +91,14 @@
     <section class="portada fondo-grilla" id="inicio">
       <div class="contenedor portada__grid">
         <div class="portada__texto">
-          <p class="sello sello--tinta">Editor de video</p>
-          <h1 class="titular">Videos que se miran <em class="subrayado">hasta</em> el final.</h1>
-          <p class="bajada">Edito tus videos cortos para TikTok, Reels y Shorts. Tú grabas, yo hago el resto. Desde US$25 por video.</p>
-          <!-- Primero lo que se vende (precios); los recursos gratis quedan como segunda opción -->
+          <p class="sello sello--tinta">Videos para negocios</p>
+          <h1 class="titular">Videos cortos que te traen <em class="subrayado">clientes.</em></h1>
+          <p class="bajada">Edito y creo videos para TikTok, Reels y Shorts para negocios y marcas personales. Tú grabas (o no), yo me encargo del resto.</p>
+          <!-- Sin precios (decisión del 17/11/2026): primero se ven los trabajos
+               y el contacto es por el formulario, que llega a WhatsApp. -->
           <div class="portada__botones">
-            <a class="boton boton--acento" href="#servicio">Ver precios <span aria-hidden="true">↓</span></a>
-            <a class="boton boton--papel" href="#recursos">Recursos gratis</a>
+            <a class="boton boton--acento" href="#trabajos">Ver trabajos <span aria-hidden="true">↓</span></a>
+            <a class="boton boton--papel" href="#contacto">Quiero mis videos</a>
           </div>
         </div>
 
@@ -140,61 +142,119 @@
 
 
     <!-- ===================================================== -->
-    <!-- 2b. SERVICIO Y PRECIOS                                 -->
-    <!-- Los precios los decidió Efraín el 10/11/2026. Si cambian, -->
-    <!-- se cambian acá y en los carruseles fijados (C36 a C38). -->
+    <!-- 2b. TRABAJOS (lo primero que busca un cliente)         -->
+    <!-- Cada video: MP4 comprimido + imagen de portada en      -->
+    <!-- videos/. Solo trabajos con permiso del cliente.        -->
     <!-- ===================================================== -->
-    <section class="seccion seccion--servicio" id="servicio" aria-labelledby="t-servicio">
+    <section class="seccion" id="trabajos" aria-labelledby="t-trabajos">
       <div class="contenedor">
-        <p class="etiqueta">01 · Servicio</p>
-        <h2 class="titulo" id="t-servicio">Edito tus videos, <em>tú</em> solo los subes</h2>
-        <p class="intro">Para negocios, marcas personales y creadores que tienen qué decir, pero no tiempo para editar. Con la misma estructura de mis videos: gancho en los primeros 3 segundos y el pedido antes de que se vayan.</p>
+        <p class="etiqueta">01 · Trabajos</p>
+        <h2 class="titulo" id="t-trabajos">Videos que ya <em>hice</em></h2>
+        <p class="intro">Trabajos reales para negocios y marcas personales. Toca un video para verlo con sonido.</p>
 
-        <!-- Tres planes. El del medio va destacado: es el que conviene para crecer. -->
-        <ul class="planes aparecer escalonado" role="list">
-          <li class="plan">
-            <h3 class="plan__t">Video suelto</h3>
-            <p class="plan__precio">US$25</p>
-            <p class="plan__det">1 video, para probar cómo trabajo.</p>
+        <!-- Para sumar un trabajo, copia un <li> y cambia el video, la portada y los textos.
+             preload="none": el video no se descarga hasta que lo tocan (la página carga rápido). -->
+        <ul class="trabajos aparecer escalonado" role="list" data-trabajos>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/mishu.mp4" poster="videos/mishu.jpg" controls preload="none" playsinline aria-label="Video de ejemplo: Tienda de camas para mascotas"></video>
+            </figure>
+            <p class="trabajo__rubro">Tienda de camas para mascotas</p>
+            <p class="trabajo__det">Sin salir en cámara: producto, voz y oferta</p>
           </li>
-          <li class="plan plan--destacado">
-            <span class="plan__sello">Para crecer</span>
-            <h3 class="plan__t">12 videos al mes</h3>
-            <p class="plan__precio">US$249</p>
-            <p class="plan__det">3 por semana. Unos US$21 cada uno.</p>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/corpocell.mp4" poster="videos/corpocell.jpg" controls preload="none" playsinline aria-label="Video de ejemplo: Clínica estética · México"></video>
+            </figure>
+            <p class="trabajo__rubro">Clínica estética · México</p>
+            <p class="trabajo__det">Médico a cámara, antes y después, y b-roll</p>
           </li>
-          <li class="plan">
-            <h3 class="plan__t">20 videos al mes</h3>
-            <p class="plan__precio">US$399</p>
-            <p class="plan__det">5 por semana. Unos US$20 cada uno.</p>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/medico.mp4" poster="videos/medico.jpg" controls preload="none" playsinline aria-label="Video de ejemplo: Médico · salud capilar"></video>
+            </figure>
+            <p class="trabajo__rubro">Médico · salud capilar</p>
+            <p class="trabajo__det">Ritmo, lista animada y pedido de comentario</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/marca-personal.mp4" poster="videos/marca-personal.jpg" controls preload="none" playsinline aria-label="Video de ejemplo: Marca personal · tecnología"></video>
+            </figure>
+            <p class="trabajo__rubro">Marca personal · tecnología</p>
+            <p class="trabajo__det">Motion con la persona recortada</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/finanzas.mp4" poster="videos/finanzas.jpg" controls preload="none" playsinline aria-label="Video de ejemplo: Emprendedor · negocios"></video>
+            </figure>
+            <p class="trabajo__rubro">Emprendedor · negocios</p>
+            <p class="trabajo__det">B-roll y subtítulos con el color de la marca</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/libros.mp4" poster="videos/libros.jpg" controls preload="none" playsinline aria-label="Video de ejemplo: Creador de contenido · libros"></video>
+            </figure>
+            <p class="trabajo__rubro">Creador de contenido · libros</p>
+            <p class="trabajo__det">Narración con b-roll de cine</p>
           </li>
         </ul>
+      </div>
+    </section>
 
-        <div class="servicio__grid">
-          <div>
-            <h3 class="etiqueta">Qué recibes</h3>
-            <ul class="incluye" role="list">
+    <!-- Separador con marca de corte -->
+    <div class="corte aparecer" aria-hidden="true"><span class="corte__linea"></span><span class="corte__marca"></span><span class="corte__linea"></span></div>
+
+    <!-- ===================================================== -->
+    <!-- 2c. SERVICIOS (sin precios: se cotiza por el formulario) -->
+    <!-- ===================================================== -->
+    <section class="seccion seccion--servicio" id="servicios" aria-labelledby="t-servicios">
+      <div class="contenedor">
+        <p class="etiqueta">02 · Servicios</p>
+        <h2 class="titulo" id="t-servicios">Dos formas de <em>trabajar</em> juntos</h2>
+        <p class="intro">Para negocios y marcas personales que necesitan publicar seguido, pero no tienen tiempo para editar o no saben qué grabar.</p>
+
+        <!-- Dos servicios. El completo va destacado: es el que resuelve todo. -->
+        <ul class="planes planes--dos aparecer escalonado" role="list">
+          <li class="plan">
+            <h3 class="plan__t">Edición</h3>
+            <p class="plan__lema">Tú grabas, yo edito.</p>
+            <p class="plan__det">Me mandas tus videos en bruto y te los devuelvo listos para subir.</p>
+            <ul class="incluye incluye--chico" role="list">
               <li>Cortes sin pausas</li>
               <li>Subtítulos animados</li>
               <li>Zooms y b-roll con intención</li>
               <li>Sonidos y música</li>
-              <li>Vertical para TikTok, Reels y Shorts</li>
             </ul>
-          </div>
-          <div>
-            <h3 class="etiqueta">Cómo trabajamos</h3>
-            <ol class="pasos pasos--columna">
-              <li><span class="pasos__n">1</span>Me escribes EDITAR</li>
-              <li><span class="pasos__n">2</span>Me mandas tus crudos</li>
-              <li><span class="pasos__n">3</span>Recibes tu video listo</li>
-            </ol>
-          </div>
-        </div>
+          </li>
+          <li class="plan plan--destacado">
+            <span class="plan__sello">Todo resuelto</span>
+            <h3 class="plan__t">Contenido completo</h3>
+            <p class="plan__lema">De la idea al video publicado.</p>
+            <p class="plan__det">Te digo qué grabar y te lo edito. Si no quieres salir en cámara, armamos videos con tus productos.</p>
+            <ul class="incluye incluye--chico" role="list">
+              <li>Ideas pensadas para tu rubro</li>
+              <li>Guiones y lista de tomas</li>
+              <li>Edición completa</li>
+              <li>Opción sin salir en cámara</li>
+            </ul>
+          </li>
+        </ul>
 
-        <!-- El contacto es por mensaje en TikTok (decisión del 10/11/2026) -->
-        <a class="boton boton--acento" data-enlace="tiktok" href="https://www.tiktok.com/@perfil_edicion" target="_blank" rel="noopener">
-          Escríbeme EDITAR en TikTok <span aria-hidden="true">↗</span><span class="solo-lector"> (se abre en una pestaña nueva)</span>
-        </a>
+        <h3 class="etiqueta">Cómo trabajamos</h3>
+        <ol class="pasos pasos--columna">
+          <li><span class="pasos__n">1</span>Completas el formulario</li>
+          <li><span class="pasos__n">2</span>Te paso una propuesta por WhatsApp</li>
+          <li><span class="pasos__n">3</span>Me mandas el material (o lo armamos juntos)</li>
+          <li><span class="pasos__n">4</span>Recibes tus videos listos para subir</li>
+        </ol>
+
+        <a class="boton boton--acento" href="#contacto">Quiero mis videos <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
@@ -203,14 +263,14 @@
     <!-- ===================================================== -->
     <section class="seccion seccion--sobre" id="sobre-mi" aria-labelledby="t-sobre">
       <div class="contenedor">
-        <p class="etiqueta">02 · Sobre mí</p>
+        <p class="etiqueta">03 · Sobre mí</p>
         <h2 class="titulo" id="t-sobre">Detrás de <em>cada</em> corte</h2>
 
         <!-- Tres datos grandes: el número final está escrito aquí;
              main.js solo lo anima desde 0 al aparecer. -->
         <ul class="datos aparecer escalonado" role="list" data-contadores>
           <li class="dato"><span class="dato__num" data-contar="3">3</span><span class="dato__txt">años editando video</span></li>
-          <li class="dato"><span class="dato__num" data-contar="30" data-prefijo="+" data-sufijo="k">+30k</span><span class="dato__txt">seguidores en TikTok</span></li>
+          <li class="dato"><span class="dato__num" data-contar="40" data-prefijo="+" data-sufijo="k">+40k</span><span class="dato__txt">seguidores en TikTok</span></li>
           <li class="dato"><span class="dato__num" data-contar="2" data-prefijo="+" data-sufijo="M" data-decimales="1">+2M</span><span class="dato__txt">vistas en mis videos</span></li>
         </ul>
 
@@ -225,11 +285,12 @@
               </li>
               <li class="hago__item">
                 <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 7 H27 V21 H15 L9 26 V21 H5 Z"/><line x1="10" y1="12.5" x2="22" y2="12.5"/><line x1="10" y1="16.5" x2="18" y2="16.5"/></svg>
-                <span>Doy consejos de edición</span>
+                <span>Escribo ideas y guiones</span>
               </li>
               <li class="hago__item">
-                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M11 9 L4 16 L11 23"/><path d="M21 9 L28 16 L21 23"/><path d="M18 6 L14 26"/></svg>
-                <span>Soy programador</span>
+                <!-- Gráfico que sube: contenido pensado para vender -->
+                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 26 H28"/><path d="M6 21 L13 14 L18 18 L27 8"/><path d="M21 8 H27 V14"/></svg>
+                <span>Creo contenido para negocios</span>
               </li>
             </ul>
           </div>
@@ -298,112 +359,79 @@
     </section>
 
     <!-- ===================================================== -->
-    <!-- 4. RECURSOS GRATIS (fondo azul de marca)               -->
+    <!-- 4. CONTACTO: formulario que se envía por WhatsApp       -->
+    <!-- No hay servidor: main.js arma el mensaje con las        -->
+    <!-- respuestas y abre WhatsApp con el texto ya escrito.     -->
+    <!-- La persona solo toca "enviar". (17/11/2026)             -->
     <!-- ===================================================== -->
-    <section class="seccion seccion--acento" id="recursos" aria-labelledby="t-recursos">
+    <section class="seccion seccion--acento" id="contacto" aria-labelledby="t-contacto">
       <div class="contenedor">
-        <p class="etiqueta">03 · Recursos</p>
-        <h2 class="titulo" id="t-recursos">Recursos <em>gratis</em></h2>
-        <p class="intro">Todo está en una sola carpeta de Drive. Son recursos propios, creados por mí. Descárgalos sin registro y sin dejar tu correo.</p>
+        <p class="etiqueta">04 · Contacto</p>
+        <h2 class="titulo" id="t-contacto">Cuéntame qué <em>necesitas</em></h2>
+        <p class="intro">Completa esto en un minuto. Se abre WhatsApp con tus respuestas y te respondo con una propuesta.</p>
 
-        <!-- Mini explicación en 3 pasos -->
-        <ol class="pasos aparecer escalonado">
-          <li><span class="pasos__n">1</span>Entra a la carpeta</li>
-          <li><span class="pasos__n">2</span>Elige lo que te sirve</li>
-          <li><span class="pasos__n">3</span>Descarga</li>
-        </ol>
+        <form class="formulario" data-formulario novalidate>
+          <div class="campo">
+            <label for="f-nombre">Tu nombre</label>
+            <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="f-marca">Nombre de tu negocio o marca</label>
+            <input id="f-marca" name="marca" type="text" autocomplete="organization" required>
+          </div>
+          <div class="campo">
+            <label for="f-rubro">¿A qué se dedica?</label>
+            <input id="f-rubro" name="rubro" type="text" placeholder="Ej.: clínica estética, tienda de ropa, coach" required>
+          </div>
+          <div class="campo">
+            <label for="f-cuenta">Tu TikTok o Instagram <span class="campo__opcional">(opcional)</span></label>
+            <input id="f-cuenta" name="cuenta" type="text" placeholder="@tucuenta">
+          </div>
 
-        <!-- Las 7 categorías.
-             MINIATURAS REALES: para cambiar una vista previa dibujada por una foto,
-             reemplaza el contenido de su <div class="recurso__vista"> por:
-             <img src="miniaturas/nombre.webp" alt="" width="400" height="240" loading="lazy">
-             (alt vacío porque el título de la tarjeta ya lo describe). -->
-        <ul class="recursos aparecer escalonado" role="list">
-          <li class="recurso">
-            <div class="recurso__vista vista-grilla" aria-hidden="true"><span class="vista-grilla__bloque"></span></div>
-            <div class="recurso__pie"><span class="recurso__n">01</span><h3 class="recurso__t">Fondos con grilla de líneas</h3></div>
-          </li>
-          <li class="recurso">
-            <div class="recurso__vista vista-motion" aria-hidden="true"><span class="vista-motion__a"></span><span class="vista-motion__b"></span></div>
-            <div class="recurso__pie"><span class="recurso__n">02</span><h3 class="recurso__t">Motion backgrounds</h3></div>
-          </li>
-          <li class="recurso">
-            <div class="recurso__vista vista-overlay" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="recurso__pie"><span class="recurso__n">03</span><h3 class="recurso__t">Overlays</h3></div>
-          </li>
-          <li class="recurso">
-            <div class="recurso__vista vista-rayos" aria-hidden="true">
-              <svg viewBox="0 0 120 72"><polygon class="rayo rayo--1" points="62,6 44,40 58,40 50,66 76,28 61,28 70,6" /><polygon class="rayo rayo--2" points="30,14 22,32 29,32 25,46 38,26 31,26 35,14"/><polygon class="rayo rayo--3" points="94,20 86,38 93,38 89,52 102,32 95,32 99,20"/></svg>
-            </div>
-            <div class="recurso__pie"><span class="recurso__n">04</span><h3 class="recurso__t">Rayos</h3></div>
-          </li>
-          <li class="recurso">
-            <div class="recurso__vista vista-papel" aria-hidden="true">
-              <svg viewBox="0 0 120 72"><path class="hoja" d="M30 8 H78 L92 22 V60 L86 63 L80 60 L74 63 L68 60 L62 63 L56 60 L50 63 L44 60 L38 63 L30 60 Z"/><path class="doblez" d="M78 8 V22 H92 Z"/><line x1="40" y1="30" x2="80" y2="30"/><line x1="40" y1="38" x2="74" y2="38"/><line x1="40" y1="46" x2="78" y2="46"/></svg>
-            </div>
-            <div class="recurso__pie"><span class="recurso__n">05</span><h3 class="recurso__t">Recursos de papel</h3></div>
-          </li>
-          <li class="recurso">
-            <div class="recurso__vista vista-seguir" aria-hidden="true">
-              <span class="vista-seguir__boton"><span class="vista-seguir__mas">+</span>Seguir</span>
-              <svg class="vista-seguir__cursor" viewBox="0 0 24 24"><path d="M5 3 L19 12 L12.5 13.5 L16 20.5 L13 22 L9.5 15 L5 19 Z"/></svg>
-            </div>
-            <div class="recurso__pie"><span class="recurso__n">06</span><h3 class="recurso__t">Animación de seguir</h3></div>
-          </li>
-          <li class="recurso">
-            <div class="recurso__vista vista-sonido" aria-hidden="true">
-              <span style="--h:.35"></span><span style="--h:.7"></span><span style="--h:.5"></span><span style="--h:.95"></span><span style="--h:.6"></span><span style="--h:.8"></span><span style="--h:.4"></span><span style="--h:.75"></span><span style="--h:.3"></span><span style="--h:.55"></span><span style="--h:.85"></span><span style="--h:.45"></span>
-            </div>
-            <div class="recurso__pie"><span class="recurso__n">07</span><h3 class="recurso__t">Sonidos</h3></div>
-          </li>
-        </ul>
+          <fieldset class="campo campo--opciones">
+            <legend>¿Qué necesitas?</legend>
+            <label><input type="radio" name="servicio" value="Solo edición (yo grabo)" required> Solo edición: yo grabo</label>
+            <label><input type="radio" name="servicio" value="Contenido completo (ideas, guion y edición)"> Contenido completo: ideas, guion y edición</label>
+            <label><input type="radio" name="servicio" value="No sé todavía"> No sé todavía</label>
+          </fieldset>
 
-        <!-- El enlace real se define en main.js (ENLACE_DRIVE). Este href es solo respaldo. -->
-        <a class="boton boton--papel" data-enlace="drive" href="https://drive.google.com/drive/folders/1FXDxT6zBFRgM-xHpAlX5bew2_E1DRwOv" target="_blank" rel="noopener">
-          Abrir la carpeta de Drive <span aria-hidden="true">↗</span><span class="solo-lector"> (se abre en una pestaña nueva)</span>
-        </a>
-        <p class="licencia">Úsalos en tus proyectos y en los de tus clientes. No los revendas ni los subas como si fueran tuyos.</p>
-      </div>
-    </section>
+          <fieldset class="campo campo--opciones">
+            <legend>¿Cuántos videos al mes?</legend>
+            <label><input type="radio" name="cantidad" value="Hasta 4" required> Hasta 4</label>
+            <label><input type="radio" name="cantidad" value="Entre 8 y 12"> Entre 8 y 12</label>
+            <label><input type="radio" name="cantidad" value="20 o más"> 20 o más</label>
+          </fieldset>
 
-    <!-- ===================================================== -->
-    <!-- 5. COMUNIDAD · PRÓXIMAMENTE (fondo noche)              -->
-    <!-- ===================================================== -->
-    <section class="seccion seccion--noche fondo-grilla--oscura" id="comunidad" aria-labelledby="t-comunidad">
-      <div class="contenedor">
-        <p class="sello sello--claro">Próximamente</p>
-        <h2 class="titulo" id="t-comunidad">Una comunidad para editar <em>sin</em> pasos de más</h2>
-        <p class="intro">Estoy preparando herramientas que eliminan pasos manuales de la edición, dentro de una comunidad privada. Todavía están en desarrollo.</p>
+          <fieldset class="campo campo--opciones">
+            <legend>¿Quién sale en los videos?</legend>
+            <label><input type="radio" name="camara" value="Yo o alguien de mi equipo" required> Yo o alguien de mi equipo</label>
+            <label><input type="radio" name="camara" value="Nadie: prefiero no salir en cámara"> Nadie: prefiero no salir en cámara</label>
+          </fieldset>
 
-        <!-- Tarjetas bloqueadas: sin nombres ni funciones hasta que existan.
-             El candado se sacude al pasar el mouse o al tocar la tarjeta. -->
-        <ul class="bloqueadas aparecer escalonado" role="list">
-          <li class="bloqueada" data-bloqueada>
-            <svg class="candado" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="10.5" width="16" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
-            <h3 class="bloqueada__t">Herramienta 01</h3>
-            <span class="bloqueada__e">En desarrollo</span>
-          </li>
-          <li class="bloqueada" data-bloqueada>
-            <svg class="candado" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="10.5" width="16" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
-            <h3 class="bloqueada__t">Herramienta 02</h3>
-            <span class="bloqueada__e">En desarrollo</span>
-          </li>
-          <li class="bloqueada" data-bloqueada>
-            <svg class="candado" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="10.5" width="16" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
-            <h3 class="bloqueada__t">Herramienta 03</h3>
-            <span class="bloqueada__e">En desarrollo</span>
-          </li>
-        </ul>
+          <fieldset class="campo campo--opciones">
+            <legend>Presupuesto mensual aproximado (en dólares)</legend>
+            <label><input type="radio" name="presupuesto" value="Menos de US$100" required> Menos de US$100</label>
+            <label><input type="radio" name="presupuesto" value="Entre US$100 y US$300"> Entre US$100 y US$300</label>
+            <label><input type="radio" name="presupuesto" value="Entre US$300 y US$600"> Entre US$300 y US$600</label>
+            <label><input type="radio" name="presupuesto" value="Más de US$600"> Más de US$600</label>
+          </fieldset>
 
-        <div class="espera">
-          <p class="espera__frase">Avísame cuando abra</p>
-          <!-- main.js activa este botón solo si ENLACE_LISTA_ESPERA tiene un enlace.
-               Mientras esté vacío, se muestra apagado y no lleva a ningún lado. -->
-          <a class="boton boton--claro" data-enlace="espera" role="link" aria-disabled="true" aria-describedby="nota-correo">
-            <span data-texto-boton>Lista de espera: pronto</span>
-          </a>
-          <p class="espera__nota" id="nota-correo">Uso tu correo solo para avisarte cuando abra.</p>
-        </div>
+          <fieldset class="campo campo--opciones">
+            <legend>¿Cuándo quieres empezar?</legend>
+            <label><input type="radio" name="cuando" value="Ya mismo" required> Ya mismo</label>
+            <label><input type="radio" name="cuando" value="Este mes"> Este mes</label>
+            <label><input type="radio" name="cuando" value="Estoy averiguando"> Estoy averiguando</label>
+          </fieldset>
+
+          <div class="campo campo--ancho">
+            <label for="f-mensaje">¿Algo más que quieras contarme? <span class="campo__opcional">(opcional)</span></label>
+            <textarea id="f-mensaje" name="mensaje" rows="3"></textarea>
+          </div>
+
+          <p class="formulario__error" role="alert" data-formulario-error></p>
+          <button class="boton boton--papel" type="submit">Enviar por WhatsApp <span aria-hidden="true">↗</span></button>
+          <p class="formulario__nota">Se abre WhatsApp con tu mensaje listo. Solo tienes que tocar enviar.</p>
+        </form>
       </div>
     </section>
 
@@ -413,29 +441,29 @@
     <section class="seccion seccion--faq" id="preguntas" aria-labelledby="t-faq">
       <div class="contenedor faq__grid">
         <div>
-          <p class="etiqueta">04 · Preguntas</p>
+          <p class="etiqueta">05 · Preguntas</p>
           <h2 class="titulo" id="t-faq">Preguntas <em>frecuentes</em></h2>
         </div>
         <div class="faq aparecer escalonado">
           <details class="faq__item">
-            <summary>¿Cuánto cuesta que edites mis videos?</summary>
-            <p>Un video suelto cuesta US$25. Por mes: 12 videos a US$249 o 20 videos a US$399.</p>
+            <summary>¿Cuánto cuesta?</summary>
+            <p>Depende de cuántos videos necesitas y de si solo edito o también armo las ideas y los guiones. Completa el formulario y te paso una propuesta a medida.</p>
           </details>
           <details class="faq__item">
-            <summary>¿Cómo te contrato?</summary>
-            <p>Escríbeme EDITAR por mensaje en TikTok. Te pregunto tu rubro y cuántos videos quieres por mes.</p>
+            <summary>¿Tengo que salir en cámara?</summary>
+            <p>No. Si prefieres no salir, armamos videos con tus productos, tu local o imágenes de tu rubro, con voz y subtítulos.</p>
           </details>
           <details class="faq__item">
-            <summary>¿Los recursos son gratis de verdad?</summary>
-            <p>Sí. Entras a la carpeta y descargas lo que quieras, sin registro y sin dejar tu correo.</p>
+            <summary>¿Cuánto tardas en entregar?</summary>
+            <p>Lo acordamos en la propuesta según la cantidad de videos. Trabajo con entregas fijas para que publiques seguido.</p>
           </details>
           <details class="faq__item">
-            <summary>¿Puedo usarlos en videos de clientes?</summary>
-            <p>Sí. Puedes usarlos en tus proyectos y en los de tus clientes. Lo único que no puedes hacer es revenderlos o subirlos como si fueran tuyos.</p>
+            <summary>¿Cómo te pago?</summary>
+            <p>En dólares, por transferencia o PayPal. Trabajo con clientes de varios países.</p>
           </details>
           <details class="faq__item">
-            <summary>¿Cuándo abre la comunidad?</summary>
-            <p>Todavía no hay fecha. Las herramientas están en desarrollo. Anótate en la lista de espera y te aviso cuando abra.</p>
+            <summary>¿Puedo pedir cambios?</summary>
+            <p>Sí. Cada video incluye rondas de cambios para que quede como quieres.</p>
           </details>
         </div>
       </div>
@@ -454,6 +482,7 @@
   <footer class="pie">
     <div class="contenedor pie__fila">
       <p>© Perfil Edición · @perfil_edicion</p>
+      <a href="recursos.html">Recursos gratis para editores</a>
       <a data-enlace="tiktok" href="https://www.tiktok.com/@perfil_edicion" target="_blank" rel="noopener">TikTok <span aria-hidden="true">↗</span><span class="solo-lector"> (se abre en una pestaña nueva)</span></a>
     </div>
   </footer>

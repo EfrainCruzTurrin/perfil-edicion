@@ -13,6 +13,10 @@ const ENLACE_LISTA_ESPERA = "https://forms.gle/Jhf3aMgwKL9ht8q98";
 // Perfil de TikTok
 const ENLACE_TIKTOK = "https://www.tiktok.com/@perfil_edicion";
 
+// Número de WhatsApp donde llega el formulario de contacto.
+// Solo dígitos, con código de país (54) y el 9 de celular de Argentina.
+const WHATSAPP = "5493533415352";
+
 // Video de la portada (clip corto vertical, idealmente MP4 de menos de 2 MB).
 // Déjalo vacío ("") y se muestra el símbolo animado.
 // Ejemplo: const VIDEO_PORTADA = "video/portada.mp4";
@@ -65,6 +69,68 @@ if (marcoVideo && VIDEO_PORTADA.trim() !== "") {
   botonPausa.addEventListener("click", () => (video.paused ? video.play() : video.pause()));
   actualizarBoton();
 }
+
+/* ---------- Formulario de contacto → WhatsApp ----------
+   No hay servidor: se arma un mensaje con las respuestas y se abre
+   WhatsApp con ese texto ya escrito. La persona solo toca "enviar". */
+const formulario = document.querySelector("[data-formulario]");
+if (formulario) {
+  const error = formulario.querySelector("[data-formulario-error]");
+  // Cómo se llama cada campo dentro del mensaje (en este orden)
+  const ROTULOS = [
+    ["nombre", "Nombre"],
+    ["marca", "Negocio o marca"],
+    ["rubro", "Rubro"],
+    ["cuenta", "Cuenta"],
+    ["servicio", "Necesito"],
+    ["cantidad", "Videos al mes"],
+    ["camara", "En cámara"],
+    ["presupuesto", "Presupuesto mensual"],
+    ["cuando", "Para empezar"],
+    ["mensaje", "Además"],
+  ];
+
+  formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+
+    // El navegador ya sabe qué falta (atributo required): se avisa del primero
+    if (!formulario.checkValidity()) {
+      const falta = formulario.querySelector(":invalid");
+      const grupo = falta.closest("fieldset");
+      const nombre = grupo ? grupo.querySelector("legend").textContent
+                           : formulario.querySelector(`label[for="${falta.id}"]`).firstChild.textContent;
+      error.textContent = `Falta responder: ${nombre.trim()}`;
+      falta.focus();
+      return;
+    }
+    error.textContent = "";
+
+    const datos = new FormData(formulario);
+    const lineas = ["Hola, vengo de tu web. Quiero videos para mi negocio.", ""];
+    ROTULOS.forEach(([campo, rotulo]) => {
+      const valor = (datos.get(campo) || "").toString().trim();
+      if (valor) lineas.push(`${rotulo}: ${valor}`);
+    });
+
+    const enlace = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lineas.join("\n"))}`;
+    // En una pestaña nueva; si el navegador la bloquea, en la misma.
+    // (Con "noopener" window.open siempre devuelve null y no se sabría
+    // si se abrió, por eso se corta el vínculo a mano con opener = null.)
+    const ventana = window.open(enlace, "_blank");
+    if (ventana) ventana.opener = null;
+    else window.location.href = enlace;
+  });
+}
+
+/* ---------- Trabajos: uno a la vez ----------
+   Si alguien pone play en un video, los demás se pausan
+   (si no, se pisan los sonidos). */
+const videosTrabajos = document.querySelectorAll("[data-trabajos] video");
+videosTrabajos.forEach((video) => {
+  video.addEventListener("play", () => {
+    videosTrabajos.forEach((otro) => { if (otro !== video) otro.pause(); });
+  });
+});
 
 /* ---------- Barra de progreso del scroll ----------
    Si el navegador soporta animaciones por scroll en CSS, lo hace styles.css.
