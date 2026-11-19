@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ===== METADATOS ===== -->
+  <title>Portfolio · Perfil Edición</title>
+  <meta name="description" content="Portfolio de edición de video: estilos propios como Verde Monitor y Dos Mundos, y trabajos para negocios y marcas personales.">
+  <meta name="theme-color" content="#F8F7F3">
+
+  <!-- =========================================================
+       DOMINIO DEL SITIO — CAMBIA AQUÍ CUANDO LO TENGAS
+       Reemplaza "https://perfil-edicion.vercel.app" en las 3 líneas
+       de abajo (canonical, og:url y og:image) por tu dominio final.
+       Va escrito en el HTML (no en main.js) porque WhatsApp,
+       Instagram y Google leen estas etiquetas sin ejecutar JavaScript.
+       ========================================================= -->
+  <link rel="canonical" href="https://perfil-edicion.vercel.app/portfolio.html">
+  <meta property="og:url" content="https://perfil-edicion.vercel.app/portfolio.html">
+  <meta property="og:image" content="https://perfil-edicion.vercel.app/og-image.png">
+
+  <!-- Open Graph: lo que se ve al compartir el enlace -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:site_name" content="Perfil Edición">
+  <meta property="og:title" content="Portfolio · Perfil Edición">
+  <meta property="og:description" content="Estilos propios y trabajos reales de edición de video corto.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo de Perfil Edición y el lema Menos pasos, mejores cortes.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon: el símbolo en su versión avatar -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- ===== FUENTES (Google Fonts, licencia OFL) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- =========================================================
+       ANALÍTICA — pega aquí el script cuando lo tengas
+       (por ejemplo, Vercel Web Analytics o Plausible).
+       Ejemplo Vercel:
+       <script defer src="/_vercel/insights/script.js"></script>
+       ========================================================= -->
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================================================== -->
+  <!-- 1. CABECERA (con barra de progreso del scroll)         -->
+  <!-- ===================================================== -->
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="index.html" aria-label="Perfil Edición, ir al inicio">
+        <svg class="logo__simbolo" viewBox="17 19 66 61" aria-hidden="true" focusable="false">
+          <g transform="translate(5 6)" fill="#111111" stroke="#111111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="22" width="56" height="40" rx="4"/><line x1="48" y1="56" x2="48" y2="72"/></g>
+          <rect x="20" y="22" width="56" height="40" rx="4" fill="#F8F7F3"/>
+          <g fill="none" stroke="#1259C3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M55 62 H72 Q76 62 76 58 V26 Q76 22 72 22 H24 Q20 22 20 26 V58 Q20 62 24 62 H41"/>
+            <line x1="32" y1="22" x2="32" y2="62"/><line x1="64" y1="22" x2="64" y2="62"/>
+            <line x1="20" y1="35.3" x2="32" y2="35.3"/><line x1="20" y1="48.7" x2="32" y2="48.7"/>
+            <line x1="64" y1="35.3" x2="76" y2="35.3"/><line x1="64" y1="48.7" x2="76" y2="48.7"/>
+            <polygon points="43.5,35 54,42 43.5,49" fill="#1259C3"/>
+            <line x1="48" y1="56" x2="48" y2="72"/>
+          </g>
+        </svg>
+        <span class="logo__nombre">Perfil Edición</span>
+      </a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="index.html">Inicio</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+    <!-- Barra de progreso del scroll (decorativa) -->
+    <div class="progreso" aria-hidden="true"><div class="progreso__barra"></div></div>
+  </header>
+
+  <main id="contenido">
+    <section class="seccion seccion--primera" id="portfolio-inicio"><div class="contenedor"><p class="etiqueta">Portfolio</p><h1 class="titulo">Mis mejores <em>ediciones</em></h1><p class="intro">Una selección de videos editados por mí: estilos propios y trabajos para clientes.</p></div></section>
+
+    <section class="seccion" id="estilos" aria-labelledby="t-estilos">
+      <div class="contenedor">
+        <p class="etiqueta">01 · Estilos propios</p>
+        <h2 class="titulo" id="t-estilos">Dos estilos que <em>diseñé</em></h2>
+        <p class="intro">Cada uno nació de estudiar una referencia y convertirla en una plantilla propia. Toca un video para verlo con sonido.</p>
+        <ul class="trabajos aparecer escalonado" role="list" data-trabajos>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/verde-monitor-1.mp4" poster="videos/verde-monitor-1.jpg" controls preload="none" playsinline aria-label="Video: Verde Monitor"></video>
+            </figure>
+            <p class="trabajo__rubro">Verde Monitor</p>
+            <p class="trabajo__det">Cara en blanco y negro, placas verdes y palabra protagonista</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/verde-monitor-2.mp4" poster="videos/verde-monitor-2.jpg" controls preload="none" playsinline aria-label="Video: Verde Monitor · versión larga"></video>
+            </figure>
+            <p class="trabajo__rubro">Verde Monitor · versión larga</p>
+            <p class="trabajo__det">El mismo estilo en un video de 50 segundos</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/dos-mundos-1.mp4" poster="videos/dos-mundos-1.jpg" controls preload="none" playsinline aria-label="Video: Dos Mundos"></video>
+            </figure>
+            <p class="trabajo__rubro">Dos Mundos</p>
+            <p class="trabajo__det">Un mundo de papel gris y otro azul oscuro, con la persona en color</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/dos-mundos-2.mp4" poster="videos/dos-mundos-2.jpg" controls preload="none" playsinline aria-label="Video: Dos Mundos · inmobiliaria"></video>
+            </figure>
+            <p class="trabajo__rubro">Dos Mundos · inmobiliaria</p>
+            <p class="trabajo__det">Gráficos que se dibujan y botón con cursor</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion" id="trabajos" aria-labelledby="t-trabajos">
+      <div class="contenedor">
+        <p class="etiqueta">02 · Trabajos</p>
+        <h2 class="titulo" id="t-trabajos">Videos para <em>negocios</em></h2>
+        <p class="intro">Trabajos reales para negocios y marcas personales.</p>
+        <ul class="trabajos aparecer escalonado" role="list" data-trabajos>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/mishu.mp4" poster="videos/mishu.jpg" controls preload="none" playsinline aria-label="Video: Tienda de camas para mascotas"></video>
+            </figure>
+            <p class="trabajo__rubro">Tienda de camas para mascotas</p>
+            <p class="trabajo__det">Sin salir en cámara: producto, voz y oferta</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/corpocell.mp4" poster="videos/corpocell.jpg" controls preload="none" playsinline aria-label="Video: Clínica estética · México"></video>
+            </figure>
+            <p class="trabajo__rubro">Clínica estética · México</p>
+            <p class="trabajo__det">Médico a cámara, antes y después, y b-roll</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/medico.mp4" poster="videos/medico.jpg" controls preload="none" playsinline aria-label="Video: Médico · salud capilar"></video>
+            </figure>
+            <p class="trabajo__rubro">Médico · salud capilar</p>
+            <p class="trabajo__det">Ritmo, lista animada y pedido de comentario</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/marca-personal.mp4" poster="videos/marca-personal.jpg" controls preload="none" playsinline aria-label="Video: Marca personal · tecnología"></video>
+            </figure>
+            <p class="trabajo__rubro">Marca personal · tecnología</p>
+            <p class="trabajo__det">Motion con la persona recortada</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/finanzas.mp4" poster="videos/finanzas.jpg" controls preload="none" playsinline aria-label="Video: Emprendedor · negocios"></video>
+            </figure>
+            <p class="trabajo__rubro">Emprendedor · negocios</p>
+            <p class="trabajo__det">B-roll y subtítulos con el color de la marca</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/libros.mp4" poster="videos/libros.jpg" controls preload="none" playsinline aria-label="Video: Creador de contenido · libros"></video>
+            </figure>
+            <p class="trabajo__rubro">Creador de contenido · libros</p>
+            <p class="trabajo__det">Narración con b-roll de cine</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/malo-bueno-excelente.mp4" poster="videos/malo-bueno-excelente.jpg" controls preload="none" playsinline aria-label="Video: Creador con personaje propio"></video>
+            </figure>
+            <p class="trabajo__rubro">Creador con personaje propio</p>
+            <p class="trabajo__det">Tabla de malo, bueno y excelente</p>
+          </li>
+          <li class="trabajo">
+            <figure class="celular celular--chico">
+              <span class="celular__parlante" aria-hidden="true"></span>
+              <video class="celular__video" src="videos/antes-despues.mp4" poster="videos/antes-despues.jpg" controls preload="none" playsinline aria-label="Video: Antes y después"></video>
+            </figure>
+            <p class="trabajo__rubro">Antes y después</p>
+            <p class="trabajo__det">El crudo al lado de la edición terminada</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion seccion--acento" id="contacto-portfolio">
+      <div class="contenedor">
+        <h2 class="titulo">¿Quieres videos <em>así</em>?</h2>
+        <p class="intro">Cuéntame de tu negocio y te respondo con una propuesta.</p>
+        <a class="boton boton--papel" href="index.html#contacto">Quiero mis videos <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================== -->
+  <!-- 7. PIE                                                 -->
+  <!-- ===================================================== -->
+  <footer class="pie">
+    <div class="contenedor pie__fila">
+      <p>© Perfil Edición · @perfil_edicion</p>
+      <a data-enlace="tiktok" href="https://www.tiktok.com/@perfil_edicion" target="_blank" rel="noopener">TikTok <span aria-hidden="true">↗</span><span class="solo-lector"> (se abre en una pestaña nueva)</span></a>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
